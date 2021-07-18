@@ -12,18 +12,19 @@ const Home = () => {
       <Header />
       <h2 className="text-recommended">Recomendados por nós</h2>
       <section className="container-cards">
-        {data && data.map((hero) => (
-          <div className="card-hero" key={hero.id}>
-            <img className="img-card" src={hero.img} alt={hero.name} />
-            <p>{hero.alias}</p>
-            <Link
-              className="btn-details"
-              to={`/home/${hero.id}/detalhes`}
-            >
-              Ver detalhes
-            </Link>
-          </div>
-        ))}
+        {data && data.filter((hero) => hero.alias !== '')
+          .map((hero) => (
+            <div className="card-hero" key={hero.id}>
+              <img className="img-card" src={hero.img} alt={hero.name} />
+              <p>{hero.alias}</p>
+              <Link
+                className="btn-details"
+                to={`/home/${hero.id}/detalhes`}
+              >
+                Ver detalhes
+              </Link>
+            </div>
+          ))}
       </section>
     </div>
   );
