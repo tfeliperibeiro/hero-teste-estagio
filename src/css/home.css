@@ -1,0 +1,42 @@
+:root {
+    --color-text-hero: #F21B2D;
+    --color-text: #0D0259;
+}
+
+.container-cards {
+    display: flex;
+    overflow-x: scroll;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.text-recommended {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.card-hero {
+    padding: 10px;
+}
+
+.btn-details {
+    text-decoration: none;
+}
+
+.img-card {
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-text-hero);
+}
+
+::-webkit-scrollbar-track {
+    background: #F0F2F2;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}

@@ -1,0 +1,29 @@
+.container-user {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F0F2F2;
+    width: 100%;
+    height: 100px;
+}
+
+.icon-user {
+    width: 80px;
+}
+
+.logo-icon {
+    width: 150px;
+}
+
+.user-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #333333;
+}
