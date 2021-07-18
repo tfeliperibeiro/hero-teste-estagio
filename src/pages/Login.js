@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/login.css';
-import avatar from '../images/avatar.png';
+import avatar from '../images/avatar.svg';
 
 const Login = () => (
   <main className="container-login">

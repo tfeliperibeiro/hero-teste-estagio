@@ -57,14 +57,12 @@
 .btn-login:hover {
   background-color: var(--color-text-hero);
   color: #fff;
-}
-
-.avatar {
-  width: 550px;
+  transition: 0.5s;
 }
 
 ::placeholder {
   opacity: 0.5;
   color: var(--color-text);
   font-size: 16px;
+  transition: 2s;
 }
