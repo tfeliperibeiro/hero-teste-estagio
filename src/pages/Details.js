@@ -15,7 +15,8 @@ const Details = ({ match: { params: { id } } }) => {
             <ul>
               <li>{`Apelido: ${hero.alias}`}</li>
               <li>{`Nome: ${hero.name}`}</li>
-              <li>{`Equipe: ${hero.affiliation}`}</li>
+              {hero.affiliation === '' ? <li>Equipe: Sem equipe</li>
+                : <li>{`Equipe: ${hero.affiliation}`}</li>}
             </ul>
             <button type="button">Editar</button>
           </section>
