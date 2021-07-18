@@ -1,0 +1,70 @@
+:root {
+  --color-text-hero: #F21B2D;
+  --color-text: #0D0259;
+}
+
+.container-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.text-main {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-text);
+  font-size: 32px;
+  max-width: 380px;
+  line-height: 58px;
+  margin: 0 auto;
+}
+
+.input-login {
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid var(--color-text);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: var(--color-text);
+  outline: none;
+  height: 50px;
+  margin-top: 50px;
+  font-size: 16px;
+}
+
+.text-hero {
+  color: var(--color-text-hero);
+}
+
+.btn-login {
+  border: 1px solid var(--color-text-hero);
+  width: 350px;
+  height: 70px;
+  background-color: transparent;
+  border-radius: 100px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--color-text-hero);
+  cursor: pointer;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-login:hover {
+  background-color: var(--color-text-hero);
+  color: #fff;
+}
+
+.avatar {
+  width: 550px;
+}
+
+::placeholder {
+  opacity: 0.5;
+  color: var(--color-text);
+  font-size: 16px;
+}
