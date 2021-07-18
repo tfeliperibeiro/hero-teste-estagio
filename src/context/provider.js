@@ -5,11 +5,13 @@ import Context from './context';
 const MyProvider = ({ children }) => {
   const [user, setUser] = useState('');
   const [data, setData] = useState([]);
+  const [powers, setPowers] = useState([]);
 
   const handleData = async () => {
     const response = await fetch('https://xmenapiheroku.herokuapp.com/api/characters');
     const responseJson = await response.json();
     setData(responseJson.results);
+    responseJson.results.map((value) => setPowers(value.powers));
   };
 
   useEffect(() => {
@@ -22,6 +24,7 @@ const MyProvider = ({ children }) => {
     user,
     handleInput,
     data,
+    powers,
   };
 
   return (
