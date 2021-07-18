@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import '../css/login.css';
 import { Link } from 'react-router-dom';
-import avatar from '../images/avatar.svg';
+import avatar from '../images/avatar.png';
 import context from '../context/context';
 
 const Login = () => {
