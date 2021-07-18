@@ -22,6 +22,7 @@ const MyProvider = ({ children }) => {
     user,
     handleInput,
     data,
+    fetchData,
   };
 
   return (
