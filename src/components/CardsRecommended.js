@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Context from '../context/context';
+
 import '../css/home.css';
 
 const CardsRecommended = () => {
