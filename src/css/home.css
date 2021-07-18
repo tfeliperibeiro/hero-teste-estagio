@@ -20,6 +20,10 @@
     padding: 10px;
 }
 
+.btn-details {
+    text-decoration: none;
+}
+
 .img-card {
     border-radius: 30px;
 }
