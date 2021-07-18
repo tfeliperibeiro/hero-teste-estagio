@@ -1,15 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Context from './context';
 
 const MyProvider = ({ children }) => {
   const [user, setUser] = useState('');
+  const [data, setData] = useState([]);
+
+  const handleData = async () => {
+    const response = await fetch('https://xmenapiheroku.herokuapp.com/api/characters');
+    const responseJson = await response.json();
+    setData(responseJson.results);
+  };
+
+  useEffect(() => {
+    handleData();
+  }, []);
 
   const handleInput = ({ target }) => setUser(target.value);
 
   const INITIAL_STATE = {
     user,
     handleInput,
+    data,
   };
 
   return (
