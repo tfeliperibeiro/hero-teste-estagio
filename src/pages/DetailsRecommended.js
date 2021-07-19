@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Context from '../context/context';
 
-const Details = ({ match: { params: { id } } }) => {
+const DetailsRecommended = ({ match: { params: { id } } }) => {
   const { data } = useContext(Context);
 
   return (
@@ -18,15 +18,15 @@ const Details = ({ match: { params: { id } } }) => {
               {hero.affiliation === '' ? <li>Equipe: Sem equipe</li>
                 : <li>{`Equipe: ${hero.affiliation}`}</li>}
             </ul>
-            <button type="button">Editar</button>
+            <button disabled type="button">Editar</button>
           </section>
         ))}
     </div>
   );
 };
 
-Details.propTypes = {
+DetailsRecommended.propTypes = {
   match: PropTypes.shape().isRequired,
 };
 
-export default Details;
+export default DetailsRecommended;
