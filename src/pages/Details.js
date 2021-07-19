@@ -7,7 +7,7 @@ const Details = ({ match: { params: { id } } }) => {
 
   return (
     <div>
-      {data.filter((hero) => hero.id === Number(id))
+      {data && data.filter((hero) => hero.id === Number(id))
         .map((hero) => (
           <section key={hero.id}>
             <img src={hero.img} alt={`Imagem ${hero.alias}`} />
