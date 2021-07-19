@@ -19,6 +19,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-text {

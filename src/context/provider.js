@@ -5,7 +5,9 @@ import Context from './context';
 const MyProvider = ({ children }) => {
   const [user, setUser] = useState('');
   const [data, setData] = useState([]);
+  const [filterPower, setFilterPower] = useState('');
   const [getRegister, setGetRegister] = useState({
+    id: 0,
     name: '',
     description: '',
     powers: '',
@@ -21,13 +23,24 @@ const MyProvider = ({ children }) => {
 
   const handleSaveHero = () => {
     setSaveHero((oldState) => [...oldState, getRegister]);
+    setGetRegister((oldState) => ({
+      ...oldState,
+      id: oldState.id + 1,
+    }));
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  const handleInput = ({ target }) => setUser(target.value);
+  const handleInput = ({ target }) => {
+    setUser(target.value);
+  };
+
+  const handleFilterPower = ({ target }) => {
+    setFilterPower(target.value);
+  };
+
   const handleRegisterCards = ({ target }) => (
     setGetRegister((oldState) => ({ ...oldState, [target.id]: target.value }))
   );
@@ -40,6 +53,8 @@ const MyProvider = ({ children }) => {
     handleRegisterCards,
     handleSaveHero,
     saveHero,
+    filterPower,
+    handleFilterPower,
   };
 
   return (

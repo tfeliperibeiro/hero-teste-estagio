@@ -11,9 +11,9 @@ const DetailsRegistered = ({ match: { params: { id } } }) => {
         .map((hero) => (
           <section key={hero.id}>
             <img src={hero.patch} alt={`Imagem ${hero.name}`} />
-            <p>{`Descrição: ${hero.description}`}</p>
             <p>{`Nome: ${hero.name}`}</p>
             <p>{`Poder: ${hero.powers}`}</p>
+            <p>{`Descrição: ${hero.description}`}</p>
             <button type="button">Editar</button>
           </section>
         ))}
