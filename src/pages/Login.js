@@ -17,8 +17,22 @@ const Login = () => {
             placeholder="Entre com seu nome"
             className="input-login"
             type="text"
+            name="name"
           />
-          <Link to="/home" className="btn-login" type="button">Entrar</Link>
+          <input
+            onChange={handleInput}
+            placeholder="Entre com seu email"
+            className="input-login"
+            type="email"
+            name="email"
+          />
+          <Link
+            to="/home"
+            className="btn-login"
+            type="button"
+          >
+            Entrar
+          </Link>
         </section>
         <img className="avatar" src={avatar} alt="Imagem Harry Potter" />
       </div>

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Context from '../context/context';
 
 const RegisterHero = () => {
-  const { handleRegisterCards, handleSaveHero } = useContext(Context);
+  const { handleInputRegister, handleSetHeroFirebase } = useContext(Context);
   return (
     <section>
       <label htmlFor="name">
@@ -11,7 +11,7 @@ const RegisterHero = () => {
           placeholder="Exemplo Wolverine"
           id="name"
           type="text"
-          onChange={handleRegisterCards}
+          onChange={handleInputRegister}
         />
       </label>
       <label htmlFor="description">
@@ -20,7 +20,7 @@ const RegisterHero = () => {
           placeholder="Escreva aqui..."
           id="description"
           type="text"
-          onChange={handleRegisterCards}
+          onChange={handleInputRegister}
         />
       </label>
       <label htmlFor="powers">
@@ -29,7 +29,7 @@ const RegisterHero = () => {
           placeholder="Teletransporte"
           id="powers"
           type="text"
-          onChange={handleRegisterCards}
+          onChange={handleInputRegister}
         />
       </label>
       <label htmlFor="patch">
@@ -37,10 +37,10 @@ const RegisterHero = () => {
           placeholder="Digite a url da imagem do Herói"
           type="text"
           id="patch"
-          onChange={handleRegisterCards}
+          onChange={handleInputRegister}
         />
       </label>
-      <button onClick={handleSaveHero} type="button">Cadastrar</button>
+      <button onClick={handleSetHeroFirebase} type="button">Cadastrar</button>
     </section>
   );
 };

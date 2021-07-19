@@ -7,6 +7,7 @@ const Home = () => (
     <Header />
     <CardsRecommended />
   </div>
+
 );
 
 export default Home;
