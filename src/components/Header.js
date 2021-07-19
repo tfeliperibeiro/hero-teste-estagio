@@ -13,6 +13,7 @@ const Header = () => {
       <div className="user-login">
         <p className="user-text">{user}</p>
         <img className="icon-user" src={userIcon} alt="Icon User" />
+        <Link to="/home/cadastro">Cadastrar Heróis</Link>
       </div>
     </div>
   );

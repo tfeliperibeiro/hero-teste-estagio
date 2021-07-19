@@ -5,6 +5,13 @@ import Context from './context';
 const MyProvider = ({ children }) => {
   const [user, setUser] = useState('');
   const [data, setData] = useState([]);
+  const [getRegister, setGetRegister] = useState({
+    name: '',
+    description: '',
+    powers: '',
+    patch: '',
+  });
+  const [saveHero, setSaveHero] = useState([]);
 
   const fetchData = async () => {
     const response = await fetch('https://xmenapiheroku.herokuapp.com/api/characters');
@@ -12,17 +19,27 @@ const MyProvider = ({ children }) => {
     setData(responseJson.results);
   };
 
+  const handleSaveHero = () => {
+    setSaveHero((oldState) => [...oldState, getRegister]);
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
 
   const handleInput = ({ target }) => setUser(target.value);
+  const handleRegisterCards = ({ target }) => (
+    setGetRegister((oldState) => ({ ...oldState, [target.id]: target.value }))
+  );
 
   const INITIAL_STATE = {
     user,
     handleInput,
     data,
     fetchData,
+    handleRegisterCards,
+    handleSaveHero,
+    saveHero,
   };
 
   return (
