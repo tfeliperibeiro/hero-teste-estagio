@@ -1,12 +1,17 @@
+
+:root {
+  --color-text: #f2f2f2;
+  --background-color: #111;
+}
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --color-text-hero: #F21B2D;
-  --color-text: #0D0259;
+body {
+  margin: 0;
+  padding: 0;
+  background-color:var(--background-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -14,7 +19,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #F0F2F2;
+  background: var(--color-text-hero);
 }
 
 ::-webkit-scrollbar {
