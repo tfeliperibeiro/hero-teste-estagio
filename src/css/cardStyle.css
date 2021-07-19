@@ -1,0 +1,32 @@
+:root {
+  --color-text-hero: #F21B2D;
+  --color-text: #0D0259;
+}
+
+.movieRow {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.movieRow--listarea {
+  overflow-x: hidden;
+  display: flex;
+  padding-left: 30px;
+}
+
+.movieRow--item {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.movieRow--item img {
+  width: 100%;
+  width: 200px;
+  height: 280px;
+  transform: scale(0.9);
+  transition: all ease 0.2s;
+}
+
+.movieRow--item img:hover {
+  transform: scale(1);
+}

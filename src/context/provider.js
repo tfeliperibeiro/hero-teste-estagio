@@ -35,24 +35,16 @@ const MyProvider = ({ children }) => {
         name: userLogin.name,
         email: userLogin.email,
       })
-      .then(() => {
-        console.log('Dados enviados');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      .then((result) => result)
+      .catch((error) => error);
   };
 
   // Função que envia os dados do Heroi cadastrado ao Firebase
   const handleSetHeroFirebase = async () => {
     await firebase.firestore().collection('heroes')
       .add(heroRegister)
-      .then(() => {
-        console.log('Dados enviados');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      .then((result) => result)
+      .catch((error) => error);
   };
 
   // Função que busca os Herois cadastrados no Firebase
@@ -60,27 +52,25 @@ const MyProvider = ({ children }) => {
     await firebase.firestore().collection('heroes')
       .get()
       .then((snapshot) => {
-        const listHero = [];
+        // eslint-disable-next-line prefer-const
+        let listHero = [];
         snapshot.forEach((doc) => {
           listHero.push({
             id: doc.id,
-            name: doc.name,
-            description: doc.description,
-            power: doc.power,
-            patch: doc.patch,
+            name: doc.data().name,
+            description: doc.data().description,
+            powers: doc.data().powers,
+            patch: doc.data().patch,
           });
         });
         setHeroFirebase(listHero);
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => error);
   };
 
   // Ciclo de vida, que chama as funções uma vez para trazer os dados
   useEffect(() => {
     fetchData();
-    handleGetHeroFirebase();
   }, []);
 
   // Função que pega os dados do input do usuario

@@ -10,8 +10,10 @@ const Login = () => {
     <main>
       <div className="container-login">
         <section className="text-main">
-          <h2>A melhor plataforma de</h2>
-          <h2 className="text-hero">HERÓIS.</h2>
+          <div>
+            <h2>A melhor plataforma de</h2>
+            <h2 className="text-hero">HERÓIS.</h2>
+          </div>
           <input
             onChange={handleInput}
             placeholder="Entre com seu nome"
