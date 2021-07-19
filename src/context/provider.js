@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+// import firebase from '../data/firebaseConnection';
 import Context from './context';
 
 const MyProvider = ({ children }) => {
@@ -7,26 +8,16 @@ const MyProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [filterPower, setFilterPower] = useState('');
   const [getRegister, setGetRegister] = useState({
-    id: 0,
     name: '',
     description: '',
     powers: '',
     patch: '',
   });
-  const [saveHero, setSaveHero] = useState([]);
 
   const fetchData = async () => {
     const response = await fetch('https://xmenapiheroku.herokuapp.com/api/characters');
     const responseJson = await response.json();
     setData(responseJson.results);
-  };
-
-  const handleSaveHero = () => {
-    setSaveHero((oldState) => [...oldState, getRegister]);
-    setGetRegister((oldState) => ({
-      ...oldState,
-      id: oldState.id + 1,
-    }));
   };
 
   useEffect(() => {
@@ -51,8 +42,7 @@ const MyProvider = ({ children }) => {
     data,
     fetchData,
     handleRegisterCards,
-    handleSaveHero,
-    saveHero,
+    getRegister,
     filterPower,
     handleFilterPower,
   };
