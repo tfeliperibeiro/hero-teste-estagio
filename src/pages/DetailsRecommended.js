@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Context from '../context/context';
 
 const DetailsRecommended = ({ match: { params: { id } } }) => {
-  const { data } = useContext(Context);
+  const { dataApi } = useContext(Context);
 
   return (
     <div>
-      {data && data.filter((hero) => hero.id === Number(id))
+      {dataApi && dataApi.filter((hero) => hero.id === Number(id))
         .map((hero) => (
           <section key={hero.id}>
             <img src={hero.img} alt={`Imagem ${hero.alias}`} />
