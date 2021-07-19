@@ -14,15 +14,3 @@ body {
   background-color:var(--background-color);
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--color-text-hero);
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-text-hero);
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}

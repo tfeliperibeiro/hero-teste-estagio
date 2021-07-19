@@ -50,12 +50,13 @@
     font-size: 32px;
     color: var(--color-text);
     cursor: pointer;
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    margin: 0 auto;
+    margin-top: 40px;
 }
 
 .text-main input::placeholder {
