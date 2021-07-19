@@ -3,3 +3,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --color-text-hero: #F21B2D;
+  --color-text: #0D0259;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-hero);
+}
+
+::-webkit-scrollbar-track {
+  background: #F0F2F2;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}

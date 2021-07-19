@@ -1,13 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Context from '../context/context';
 
 const DetailsRegistered = ({ match: { params: { id } } }) => {
-  const { saveHero } = useContext(Context);
+  const { heroFirebase, handleGetHeroFirebase } = useContext(Context);
+
+  useEffect(() => {
+    handleGetHeroFirebase();
+  }, []);
 
   return (
     <div>
-      {saveHero && saveHero.filter((hero) => hero.id === Number(id))
+      {heroFirebase && heroFirebase.filter((hero) => hero.id === id)
         .map((hero) => (
           <section key={hero.id}>
             <img src={hero.patch} alt={`Imagem ${hero.name}`} />

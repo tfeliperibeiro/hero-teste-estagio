@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Context from '../context/context';
 
-import '../css/home.css';
+import '../css/cardStyle.css';
 
 const CardsRecommended = () => {
   const { dataApi } = useContext(Context);
@@ -10,11 +10,13 @@ const CardsRecommended = () => {
   return (
     <div>
       <h2 className="text-recommended">Recomendados por nós</h2>
-      <section className="container-cards">
+      <div className="container-cards">
         {dataApi && dataApi.filter((hero) => hero.alias !== '')
           .map((hero) => (
             <div className="card-hero" key={hero.id}>
-              <img className="img-card" src={hero.img} alt={hero.name} />
+              <div className="card-row">
+                <img className="img-card" src={hero.img} alt={hero.name} />
+              </div>
               <p>{hero.alias}</p>
               <Link
                 className="btn-details"
@@ -24,7 +26,7 @@ const CardsRecommended = () => {
               </Link>
             </div>
           ))}
-      </section>
+      </div>
     </div>
   );
 };

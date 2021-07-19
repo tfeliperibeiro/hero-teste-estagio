@@ -1,0 +1,13 @@
+:root {
+  --color-text-hero: #F21B2D;
+  --color-text: #0D0259;
+}
+
+.card-hero {
+  margin-bottom: 30px;
+}
+
+.container-cards {
+  overflow-x: hidden;
+  display: flex;
+}
