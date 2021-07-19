@@ -13,10 +13,11 @@ const RegisteredCards = () => {
       <section className="container-cards">
         {saveHero && saveHero.map((hero) => (
           <div className="card-hero" key={hero.name}>
+            <img className="img-card" src={hero.patch} alt={`Imagem de ${hero.name}`} />
             <p>{hero.name}</p>
             <Link
               className="btn-details"
-              to={`/home/${hero.id}/detalhes`}
+              to={`/home/${hero.id}/detalhes/cadastrados`}
             >
               Ver detalhes
             </Link>
