@@ -6,7 +6,7 @@ import imageHero from '../images/hero.png';
 import '../css/home.css';
 
 const RegisteredCards = () => {
-  const { saveHero } = useContext(Context);
+  const { saveHero, filterPower } = useContext(Context);
 
   return (
     <div>

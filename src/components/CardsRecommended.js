@@ -18,7 +18,7 @@ const CardsRecommended = () => {
               <p>{hero.alias}</p>
               <Link
                 className="btn-details"
-                to={`/home/${hero.id}/detalhes`}
+                to={`/home/${hero.id}/detalhes/recomendados`}
               >
                 Ver detalhes
               </Link>
