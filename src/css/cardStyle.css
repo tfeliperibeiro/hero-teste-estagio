@@ -9,9 +9,11 @@
 }
 
 .movieRow--listarea {
-  overflow-x: hidden;
   display: flex;
   padding-left: 30px;
+  flex-flow: row nowrap;
+  margin: 10px 0 30px;
+  overflow-x: scroll;
 }
 
 .movieRow--item {

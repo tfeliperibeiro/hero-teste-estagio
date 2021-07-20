@@ -14,6 +14,29 @@
     width: 500px;
 }
 
+.container-user {
+    background: linear-gradient(to top, #060126, transparent);
+    display: flex;
+    color: var(--color-text);
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.icon-user {
+    width: 100px;
+}
+
+.logo-icon {
+    width: 180px;
+}
+
+.container-icon-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .text-main {
     color: var(--color-text);
     font-size: 32px;
