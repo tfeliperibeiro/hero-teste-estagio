@@ -1,0 +1,50 @@
+:root {
+  --color-text-hero: #F21B2D;
+  --color-text: #F2F2F2;
+}
+
+.container-feature {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80vh;
+}
+
+.container-feature img {
+  width: 500px;
+}
+
+.feature-vertical {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, #060126, transparent);
+  position: absolute;
+  z-index: 0;
+}
+
+.text-register {
+  color: var(--color-text);
+  font-size: 32px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.btn-register {
+  width: 250px;
+  height: 70px;
+  background-color: var(--color-text-hero);
+  border-radius: 100px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 0 auto;
+  margin-top: 30px;
+}

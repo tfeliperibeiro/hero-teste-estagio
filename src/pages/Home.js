@@ -1,11 +1,11 @@
 import React from 'react';
 import CardsRecommended from '../components/CardsRecommended';
 import CardsRegistered from '../components/CardsRegistered';
-import Header from '../components/Header';
+import FeatureHero from '../components/FeatureHero';
 
 const Home = () => (
   <div>
-    <Header />
+    <FeatureHero />
     <CardsRegistered />
     <CardsRecommended />
   </div>

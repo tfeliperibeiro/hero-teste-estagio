@@ -1,6 +1,6 @@
 :root {
   --color-text-hero: #F21B2D;
-  --color-text: #0D0259;
+  --color-text: #F2F2F2;
 }
 
 .movieRow {
@@ -9,14 +9,15 @@
 }
 
 .movieRow--listarea {
-  overflow-x: hidden;
   display: flex;
   padding-left: 30px;
+  flex-flow: row nowrap;
+  margin: 10px 0 30px;
+  overflow-x: scroll;
 }
 
 .movieRow--item {
   display: inline-block;
-  cursor: pointer;
 }
 
 .movieRow--item img {
@@ -29,4 +30,23 @@
 
 .movieRow--item img:hover {
   transform: scale(1);
+}
+
+.text-recommended {
+  color: var(--color-text);
+  padding-left: 40px;
+}
+
+.name-hero {
+  color: var(--color-text);
+  text-align: center;
+}
+
+.link-details {
+  color: var(--color-text-hero);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
 }
