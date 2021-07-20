@@ -35,6 +35,7 @@ const Login = () => {
           >
             Entrar
           </Link>
+          <Link to="/register" className="link-register"> Ou cadastre-se.</Link>
         </section>
         <img className="avatar" src={avatar} alt="Imagem Harry Potter" />
       </div>

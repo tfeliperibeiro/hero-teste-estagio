@@ -15,11 +15,11 @@
 }
 
 .text-main {
-    font-family: "Poppins", sans-serif;
     color: var(--color-text);
     font-size: 32px;
     max-width: 380px;
     line-height: 60px;
+    margin-top: -30px;
 }
 
 .text-main input {
@@ -30,9 +30,24 @@
     border-bottom: 1px solid var(--color-text-hero);
     width: 100%;
     padding: 10px;
-    font-family: "Poppins", sans-serif;
     font-weight: 300;
     color: var(--color-text);
+}
+
+.link-register {
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+
+.link-register:hover{
+    color: var(--color-text-hero);
+    transition: ease 0.2s;
 }
 
 .text-hero {
@@ -56,7 +71,7 @@
     align-items: center;
     text-decoration: none;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .text-main input::placeholder {
