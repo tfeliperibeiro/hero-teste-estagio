@@ -1,0 +1,53 @@
+:root {
+  --color-text-hero: #F21B2D;
+  --color-text: #F2F2F2;
+}
+
+.container-card {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text);
+  margin-top: 30px;
+}
+
+.cards-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+}
+
+.btn-details {
+  width: 100%;
+  height: 50px;
+  background-color: var(--color-text-hero);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+  border: none;
+  opacity: 0.5;
+  margin-right: 12px;
+}
+
+.btn-details:hover:disabled {
+  cursor: not-allowed;
+}
+
+.msg-edite {
+  font-weight: 700;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.container-btn-details {
+  display: flex;
+  width: 100%;
+}
+
+.img-hero {
+  border: 2px solid var(--color-text-hero);
+}

@@ -13,7 +13,7 @@ const CardsRegistered = () => {
 
   return (
     <div className="movieRow">
-      <h2 className="text-recommended">Filmes cadastrados</h2>
+      <h2 className="text-recommended">Heróis cadastrados</h2>
       <div className="movieRow--listarea">
         {heroFirebase && heroFirebase.map((hero) => (
           <div className="movieRow--list" key={hero.id}>
