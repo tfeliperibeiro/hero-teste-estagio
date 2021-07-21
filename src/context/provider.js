@@ -77,6 +77,7 @@ const MyProvider = ({ children }) => {
       .delete()
       .then(() => {
         setRedirectHome(true);
+        setRedirectHome(false);
       })
       .catch((error) => error);
   };

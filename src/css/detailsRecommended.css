@@ -50,4 +50,5 @@
 
 .img-hero {
   border: 2px solid var(--color-text-hero);
+  width: 350px;
 }
