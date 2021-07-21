@@ -1,0 +1,18 @@
+.btn-details-registered {
+  width: 100%;
+  height: 50px;
+  background-color: var(--color-text-hero);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+  border: none;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.container-btn-registered {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}

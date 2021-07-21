@@ -21,6 +21,8 @@ const MyProvider = ({ children }) => {
     patch: '',
   });
 
+  const [redirectHome, setRedirectHome] = useState(false);
+
   // Função que faz requisição para api de Herois recomendados
   const fetchData = async () => {
     const response = await fetch('https://xmenapiheroku.herokuapp.com/api/characters');
@@ -68,6 +70,18 @@ const MyProvider = ({ children }) => {
       .catch((error) => error);
   };
 
+  // Função que delete os dados do Heroi cadastrado ao Firebase
+  const handleDeleteHeroFirebase = async (id) => {
+    await firebase.firestore().collection('heroes')
+      .doc(id)
+      .delete()
+      .then(() => {
+        setRedirectHome(true);
+        setRedirectHome(false);
+      })
+      .catch((error) => error);
+  };
+
   // Ciclo de vida, que chama as funções uma vez para trazer os dados
   useEffect(() => {
     fetchData();
@@ -94,6 +108,8 @@ const MyProvider = ({ children }) => {
     handleSetHeroFirebase,
     handleGetHeroFirebase,
     heroFirebase,
+    handleDeleteHeroFirebase,
+    redirectHome,
   };
 
   return (

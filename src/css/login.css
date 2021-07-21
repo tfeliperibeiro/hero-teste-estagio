@@ -15,7 +15,7 @@
 }
 
 .container-user {
-    background: linear-gradient(to top, #060126, transparent);
+    background: linear-gradient(to top, #111, transparent);
     display: flex;
     color: var(--color-text);
     justify-content: space-between;
@@ -68,7 +68,7 @@
     font-weight: 700;
 }
 
-.link-register:hover{
+.link-register:hover {
     color: var(--color-text-hero);
     transition: ease 0.2s;
 }

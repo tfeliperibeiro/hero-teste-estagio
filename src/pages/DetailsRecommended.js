@@ -1,26 +1,56 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Context from '../context/context';
+import Header from '../components/Header';
+
+import '../css/detailsRecommended.css';
 
 const DetailsRecommended = ({ match: { params: { id } } }) => {
   const { dataApi } = useContext(Context);
 
   return (
     <div>
-      {dataApi && dataApi.filter((hero) => hero.id === Number(id))
-        .map((hero) => (
-          <section key={hero.id}>
-            <img src={hero.img} alt={`Imagem ${hero.alias}`} />
-            <p>{`Descrição: ${hero.description}`}</p>
-            <ul>
-              <li>{`Apelido: ${hero.alias}`}</li>
-              <li>{`Nome: ${hero.name}`}</li>
-              {hero.affiliation === '' ? <li>Equipe: Sem equipe</li>
-                : <li>{`Equipe: ${hero.affiliation}`}</li>}
-            </ul>
-            <button disabled type="button">Editar</button>
-          </section>
-        ))}
+      <Header />
+      <div className="container-card">
+        {dataApi && dataApi.filter((hero) => hero.id === Number(id))
+          .map((hero) => (
+            <section className="cards-hero" key={hero.id}>
+              <img
+                className="img-hero"
+                src={hero.img}
+                alt={`Imagem ${hero.alias}`}
+              />
+              <p>{`Descrição: ${hero.description}`}</p>
+              <ul>
+                <li>{`Apelido: ${hero.alias}`}</li>
+                <li>{`Nome: ${hero.name}`}</li>
+                {hero.affiliation === '' ? <li>Equipe: Sem equipe</li>
+                  : <li>{`Equipe: ${hero.affiliation}`}</li>}
+              </ul>
+              <div className="container-btn-details">
+                <button
+                  className="btn-details"
+                  disabled
+                  type="button"
+                >
+                  Editar
+                </button>
+                <button
+                  type="button"
+                  className="btn-details"
+                  disabled
+                >
+                  Excluir
+                </button>
+              </div>
+              <p
+                className="msg-edite"
+              >
+                Você não pode editar ou excluir este Herói.
+              </p>
+            </section>
+          ))}
+      </div>
     </div>
   );
 };
