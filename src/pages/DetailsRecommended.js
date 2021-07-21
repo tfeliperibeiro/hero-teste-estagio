@@ -14,7 +14,8 @@ const DetailsRecommended = ({ match: { params: { id } } }) => {
       <div className="container-card">
         {dataApi && dataApi.filter((hero) => hero.id === Number(id))
           .map((hero) => (
-            <section className="cards-hero" key={hero.id}>
+            <section className="card-hero" key={hero.id}>
+              <h2>{hero.name}</h2>
               <img
                 className="img-hero"
                 src={hero.img}

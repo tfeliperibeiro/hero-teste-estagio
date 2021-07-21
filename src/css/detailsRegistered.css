@@ -6,8 +6,9 @@
   font-weight: 700;
   color: var(--color-text);
   border: none;
-  margin-right: 12px;
   cursor: pointer;
+  margin-top: 30px;
+  margin: 10px;
 }
 
 .container-btn-registered {

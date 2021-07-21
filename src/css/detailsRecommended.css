@@ -5,20 +5,16 @@
 
 .container-card {
   height: 100vh;
-  width: 100%;
+  width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--color-text);
-  margin-top: 30px;
+  margin: 0 auto;
 }
 
-.cards-hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 300px;
+.card-hero {
+  margin-top: 180px;
 }
 
 .btn-details {
@@ -50,5 +46,5 @@
 
 .img-hero {
   border: 2px solid var(--color-text-hero);
-  width: 350px;
+  width: 500px;
 }

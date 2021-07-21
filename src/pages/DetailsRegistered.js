@@ -25,7 +25,8 @@ const DetailsRegistered = ({ match: { params: { id } } }) => {
         {redirectHome && <Redirect to="/home" />}
         {heroFirebase && heroFirebase.filter((hero) => hero.id === id)
           .map((hero) => (
-            <section className="cards-hero" key={hero.id}>
+            <section key={hero.id}>
+              <h2>{hero.name}</h2>
               <img
                 src={hero.patch}
                 alt={`Imagem ${hero.name}`}
