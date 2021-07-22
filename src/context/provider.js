@@ -21,7 +21,22 @@ const MyProvider = ({ children }) => {
     patch: '',
   });
 
+  // Estado que redireciona para pagina Home apos excluir um heroi
   const [redirectHome, setRedirectHome] = useState(false);
+
+  // Estado que seta a abertura do modal
+  const [openModal, setOpenModal] = useState(false);
+
+  // Estado para saber se ouve alguma edição, se houver faz uma nova requisição
+  const [isEdited, setIsEdited] = useState(false);
+
+  // Estado que armazena os dados digitados no modal em editar Heroi
+  const [editHero, setEditHero] = useState({
+    name: '',
+    description: '',
+    powers: '',
+    patch: '',
+  });
 
   // Função que faz requisição para api de Herois recomendados
   const fetchData = async () => {
@@ -82,6 +97,22 @@ const MyProvider = ({ children }) => {
       .catch((error) => error);
   };
 
+  const handleEditHeroFirebase = async (id) => {
+    await firebase.firestore().collection('heroes')
+      .doc(id)
+      .update({
+        name: editHero.name,
+        description: editHero.description,
+        powers: editHero.powers,
+        patch: editHero.patch,
+      })
+      .then(() => {
+        setOpenModal(false);
+        setIsEdited(!isEdited);
+      })
+      .catch((error) => error);
+  };
+
   // Ciclo de vida, que chama as funções uma vez para trazer os dados
   useEffect(() => {
     fetchData();
@@ -97,6 +128,16 @@ const MyProvider = ({ children }) => {
     setHeroRegister((oldState) => ({ ...oldState, [target.id]: target.value }))
   );
 
+  // Função que pega os dados digitados no input na pagina de editar Heroi
+  const handleEditHero = ({ target }) => (
+    setEditHero((oldState) => ({ ...oldState, [target.id]: target.value }))
+  );
+
+  // Função que abre o modal na pagina details
+  const handleOpenModal = () => {
+    setOpenModal(!openModal);
+  };
+
   // Estado que é repassado a todos os componentes filhos
   const INITIAL_STATE = {
     userLogin,
@@ -110,6 +151,12 @@ const MyProvider = ({ children }) => {
     heroFirebase,
     handleDeleteHeroFirebase,
     redirectHome,
+    openModal,
+    handleOpenModal,
+    handleEditHero,
+    editHero,
+    handleEditHeroFirebase,
+    isEdited,
   };
 
   return (

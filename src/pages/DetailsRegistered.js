@@ -5,6 +5,7 @@ import Context from '../context/context';
 import Header from '../components/Header';
 
 import '../css/detailsRegistered.css';
+import Modal from '../components/Modal';
 
 const DetailsRegistered = ({ match: { params: { id } } }) => {
   const {
@@ -12,15 +13,19 @@ const DetailsRegistered = ({ match: { params: { id } } }) => {
     handleGetHeroFirebase,
     handleDeleteHeroFirebase,
     redirectHome,
+    handleOpenModal,
+    openModal,
+    isEdited,
   } = useContext(Context);
 
   useEffect(() => {
     handleGetHeroFirebase();
-  }, []);
+  }, [isEdited]);
 
   return (
     <div>
       <Header />
+      {openModal && <Modal id={id} />}
       <div className="container-card">
         {redirectHome && <Redirect to="/home" />}
         {heroFirebase && heroFirebase.filter((hero) => hero.id === id)
@@ -41,6 +46,7 @@ const DetailsRegistered = ({ match: { params: { id } } }) => {
                 <button
                   className="btn-details-registered"
                   type="button"
+                  onClick={handleOpenModal}
                 >
                   Editar
                 </button>
