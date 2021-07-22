@@ -7,11 +7,11 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .avatar {
-  width: 500px;
+    width: 500px;
 }
 
 .container-user {
@@ -115,3 +115,52 @@
     color: var(--color-text);
     opacity: 0.5;
 }
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 801px) and (min-width: 320px) {
+    .container-login {
+        flex-direction: column-reverse;
+        overflow: hidden;
+    }
+    .text-main {
+        width: 100%;
+        line-height: normal;
+    }
+    .text-main h2 {
+        font-size: 25px;
+        text-align: center;
+    }
+    .avatar {
+        width: 250px;
+    }
+    .btn-login {
+        width: 80%;
+        height: 60px;
+        font-size: 25px;
+        margin: 15px auto;
+    }
+    .link-register {
+        margin-top: 20px;
+        margin: 5px auto;
+    }
+    .text-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        line-height: 50px;
+    }
+    .input-login {
+      width: 80%;
+      margin: auto;
+    }
+
+    .input-login input {
+        margin-bottom: 10px;
+    }
+}
+
+

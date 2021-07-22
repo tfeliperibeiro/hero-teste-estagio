@@ -156,7 +156,6 @@ const MyProvider = ({ children }) => {
       .then(() => {
         toast.success('Login feito com sucesso!');
         setIsLogged(true);
-        setIsLogged(false);
       })
       .catch((error) => {
         if (error.code === 'auth/user-not-found') {
@@ -223,6 +222,7 @@ const MyProvider = ({ children }) => {
     isRegistered,
     handleLoginUser,
     isLogged,
+    heroRegister,
   };
 
   return (
