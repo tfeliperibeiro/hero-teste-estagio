@@ -42,6 +42,9 @@ const MyProvider = ({ children }) => {
   // Estado para saber se ouve alguma edição, se houver faz uma nova requisição
   const [isEdited, setIsEdited] = useState(false);
 
+  // Estado que recebe se o usuario foi logado para redirecionar ele para Home
+  // const [isLogged, setIsLogged] = useState(false);
+
   // Estado que recebe os dados digitados no modal em editar Heroi
   const [editHero, setEditHero] = useState({
     name: '',
@@ -58,8 +61,8 @@ const MyProvider = ({ children }) => {
   };
 
   // Função que envia os dados de Login ao Firebase
-  const handleSetUserFirebase = async () => {
-    await firebase.firestore().collection('users')
+  const handleSetUserFirebase = () => {
+    firebase.firestore().collection('users')
       .add({
         name: userLogin.name,
         email: userLogin.email,
@@ -69,16 +72,16 @@ const MyProvider = ({ children }) => {
   };
 
   // Função que envia os dados do Heroi cadastrado ao Firebase
-  const handleSetHeroFirebase = async () => {
-    await firebase.firestore().collection('heroes')
+  const handleSetHeroFirebase = () => {
+    firebase.firestore().collection('heroes')
       .add(heroRegister)
       .then((result) => result)
       .catch((error) => error);
   };
 
   // Função que busca os Herois cadastrados no Firebase
-  const handleGetHeroFirebase = async () => {
-    await firebase.firestore().collection('heroes')
+  const handleGetHeroFirebase = () => {
+    firebase.firestore().collection('heroes')
       .get()
       .then((snapshot) => {
         // eslint-disable-next-line prefer-const
@@ -98,8 +101,8 @@ const MyProvider = ({ children }) => {
   };
 
   // Função que delete os dados do Heroi cadastrado ao Firebase
-  const handleDeleteHeroFirebase = async (id) => {
-    await firebase.firestore().collection('heroes')
+  const handleDeleteHeroFirebase = (id) => {
+    firebase.firestore().collection('heroes')
       .doc(id)
       .delete()
       .then(() => {
@@ -110,8 +113,8 @@ const MyProvider = ({ children }) => {
   };
 
   // Função para editar Heroi no banco de dados
-  const handleEditHeroFirebase = async (id) => {
-    await firebase.firestore().collection('heroes')
+  const handleEditHeroFirebase = (id) => {
+    firebase.firestore().collection('heroes')
       .doc(id)
       .update({
         name: editHero.name,
@@ -127,8 +130,8 @@ const MyProvider = ({ children }) => {
   };
 
   // Função que cadastra um novo usuario ao firebase
-  const handleRegisterNewUser = async () => {
-    await firebase.auth()
+  const handleRegisterNewUser = () => {
+    firebase.auth()
       .createUserWithEmailAndPassword(userRegister.email, userRegister.password)
       .then(() => {
         toast.success('Usuario cadastrado!');
@@ -148,11 +151,12 @@ const MyProvider = ({ children }) => {
   };
 
   // Função que loga usuario na pagina
-  const handleLoginUser = async () => {
-    await firebase.auth()
+  const handleLoginUser = () => {
+    firebase.auth()
       .signInWithEmailAndPassword(userLogin.email, userLogin.password)
       .then(() => {
         toast.success('Login feito com sucesso!');
+        // setIsLogged(true);
       })
       .catch((error) => {
         if (error.code === 'auth/user-not-found') {
@@ -218,6 +222,7 @@ const MyProvider = ({ children }) => {
     handleRegisterNewUser,
     isRegistered,
     handleLoginUser,
+    // isLogged,
   };
 
   return (

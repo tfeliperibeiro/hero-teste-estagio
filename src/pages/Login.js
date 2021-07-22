@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import '../css/login.css';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import avatar from '../images/avatar.png';
 import context from '../context/context';
 
@@ -8,9 +8,12 @@ const Login = () => {
   const {
     handleInputLoginUser,
     handleLoginUser,
+    isLogged,
   } = useContext(context);
+
   return (
     <main>
+      { isLogged && <Redirect to="/home" /> }
       <div className="container-login">
         <section className="text-main">
           <div>
