@@ -161,6 +161,9 @@
     .input-login input {
         margin-bottom: 10px;
     }
+    .container-user{
+      display: none;
+    }
 }
 
 
