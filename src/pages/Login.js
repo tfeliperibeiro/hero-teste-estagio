@@ -5,7 +5,7 @@ import avatar from '../images/avatar.png';
 import context from '../context/context';
 
 const Login = () => {
-  const { handleInput } = useContext(context);
+  const { handleInputLoginUser } = useContext(context);
   return (
     <main>
       <div className="container-login">
@@ -15,29 +15,28 @@ const Login = () => {
             <h2 className="text-hero">HERÓIS.</h2>
           </div>
           <input
-            onChange={handleInput}
-            placeholder="Entre com seu nome"
-            className="input-login"
-            type="text"
-            name="name"
-          />
-          <input
-            onChange={handleInput}
+            onChange={handleInputLoginUser}
             placeholder="Entre com seu email"
             className="input-login"
-            type="email"
+            type="text"
             name="email"
           />
-          <Link
-            to="/home"
+          <input
+            onChange={handleInputLoginUser}
+            placeholder="Entre com sua senha"
+            className="input-login"
+            type="password"
+            name="password"
+          />
+          <button
             className="btn-login"
             type="button"
           >
             Entrar
-          </Link>
+          </button>
           <Link to="/register" className="link-register"> Ou cadastre-se.</Link>
         </section>
-        <img className="avatar" src={avatar} alt="Imagem Harry Potter" />
+        <img className="avatar" src={avatar} alt="Imagem Heróis" />
       </div>
     </main>
 

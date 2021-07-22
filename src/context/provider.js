@@ -1,14 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import firebase from '../data/firebaseConnection';
 import Context from './context';
 
 const MyProvider = ({ children }) => {
-  // Estado que armazena o valor do input de Login
+  // Estado que armazena o valor do input de Login de usuario
   const [userLogin, setUserLogin] = useState({
-    name: '',
     email: '',
+    password: '',
   });
+
+  // Estado que armazena input de registro de usuario
+  const [userRegister, setUserRegister] = useState({
+    email: '',
+    password: '',
+  });
+
+  /* Estado que verifica se o usuario
+  foi cadastrado para redirecionar para outra pagina */
+  const [isRegistered, setIsRegistered] = useState(false);
+
   // Estado que armazena dados da API de recomendados
   const [dataApi, setDataApi] = useState([]);
   // Estado para armazenar os dados do Heroi cadastrados no Firebase
@@ -113,14 +125,39 @@ const MyProvider = ({ children }) => {
       .catch((error) => error);
   };
 
+  // Função que cadastra um novo usuario ao firebase
+  const handleRegisterNewUser = async () => {
+    await firebase.auth()
+      .createUserWithEmailAndPassword(userRegister.email, userRegister.password)
+      .then(() => {
+        toast.success('Usuario cadastrado!');
+        setIsRegistered(true);
+        setIsRegistered(false);
+      })
+      // fazendo tratamento de erros
+      .catch((error) => {
+        if (error.code === 'auth/weak-password') {
+          toast.error('Senha menor que 6 caracteres!');
+        } else if (error.code === 'auth/invalid-email') {
+          toast.error('Digite um email válido!');
+        } else if (error.code === 'auth/email-already-in-use') {
+          toast.error('Email já em uso!');
+        }
+      });
+  };
+
   // Ciclo de vida, que chama as funções uma vez para trazer os dados
   useEffect(() => {
     fetchData();
   }, []);
 
   // Função que pega os dados do input do usuario
-  const handleInput = ({ target }) => {
+  const handleInputLoginUser = ({ target }) => {
     setUserLogin((oldState) => ({ ...oldState, [target.name]: target.value }));
+  };
+
+  const handleInputRegisterUser = ({ target }) => {
+    setUserRegister((oldState) => ({ ...oldState, [target.name]: target.value }));
   };
 
   // Função que pega os dados dos Herois na pagina de registro
@@ -141,7 +178,9 @@ const MyProvider = ({ children }) => {
   // Estado que é repassado a todos os componentes filhos
   const INITIAL_STATE = {
     userLogin,
-    handleInput,
+    userRegister,
+    handleInputLoginUser,
+    handleInputRegisterUser,
     dataApi,
     fetchData,
     handleInputRegister,
@@ -157,6 +196,8 @@ const MyProvider = ({ children }) => {
     editHero,
     handleEditHeroFirebase,
     isEdited,
+    handleRegisterNewUser,
+    isRegistered,
   };
 
   return (

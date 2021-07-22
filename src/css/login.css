@@ -94,7 +94,8 @@
     align-items: center;
     text-decoration: none;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 40px;
+    border: none;
 }
 
 .text-main input::placeholder {
