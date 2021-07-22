@@ -18,9 +18,22 @@
     background: linear-gradient(to top, #111, transparent);
     display: flex;
     color: var(--color-text);
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 100px;
+}
+
+.btn-logout {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: var(--color-text);
+    width: 80px;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .icon-user {

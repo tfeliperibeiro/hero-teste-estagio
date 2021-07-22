@@ -5,27 +5,27 @@ import firebase from '../data/firebaseConnection';
 import Context from './context';
 
 const MyProvider = ({ children }) => {
-  // Estado que armazena o valor do input de Login de usuario
+  // Estado que recebe o valor do input de Login de usuario
   const [userLogin, setUserLogin] = useState({
     email: '',
     password: '',
   });
 
-  // Estado que armazena input de registro de usuario
+  // Estado que recebe input de registro de usuario
   const [userRegister, setUserRegister] = useState({
     email: '',
     password: '',
   });
 
-  /* Estado que verifica se o usuario
+  /* Estado que recebe se o usuario
   foi cadastrado para redirecionar para outra pagina */
   const [isRegistered, setIsRegistered] = useState(false);
 
-  // Estado que armazena dados da API de recomendados
+  // Estado que recebe dados da API de recomendados
   const [dataApi, setDataApi] = useState([]);
   // Estado para armazenar os dados do Heroi cadastrados no Firebase
   const [heroFirebase, setHeroFirebase] = useState([]);
-  // Estado que armazena os valores dos inputs de cadastrar Heroi
+  // Estado que recebe os valores dos inputs de cadastrar Heroi
   const [heroRegister, setHeroRegister] = useState({
     name: '',
     description: '',
@@ -42,7 +42,7 @@ const MyProvider = ({ children }) => {
   // Estado para saber se ouve alguma edição, se houver faz uma nova requisição
   const [isEdited, setIsEdited] = useState(false);
 
-  // Estado que armazena os dados digitados no modal em editar Heroi
+  // Estado que recebe os dados digitados no modal em editar Heroi
   const [editHero, setEditHero] = useState({
     name: '',
     description: '',
@@ -109,6 +109,7 @@ const MyProvider = ({ children }) => {
       .catch((error) => error);
   };
 
+  // Função para editar Heroi no banco de dados
   const handleEditHeroFirebase = async (id) => {
     await firebase.firestore().collection('heroes')
       .doc(id)
@@ -142,6 +143,24 @@ const MyProvider = ({ children }) => {
           toast.error('Digite um email válido!');
         } else if (error.code === 'auth/email-already-in-use') {
           toast.error('Email já em uso!');
+        }
+      });
+  };
+
+  // Função que loga usuario na pagina
+  const handleLoginUser = async () => {
+    await firebase.auth()
+      .signInWithEmailAndPassword(userLogin.email, userLogin.password)
+      .then(() => {
+        toast.success('Login feito com sucesso!');
+      })
+      .catch((error) => {
+        if (error.code === 'auth/user-not-found') {
+          toast.error('Usuário inválido!');
+        } else if (error.code === 'auth/wrong-password') {
+          toast.error('Senha incorreta!');
+        } else if (error.code === 'auth/invalid-email') {
+          toast.error('Email incorreto!');
         }
       });
   };
@@ -198,6 +217,7 @@ const MyProvider = ({ children }) => {
     isEdited,
     handleRegisterNewUser,
     isRegistered,
+    handleLoginUser,
   };
 
   return (

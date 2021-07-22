@@ -5,7 +5,10 @@ import avatar from '../images/avatar.png';
 import context from '../context/context';
 
 const Login = () => {
-  const { handleInputLoginUser } = useContext(context);
+  const {
+    handleInputLoginUser,
+    handleLoginUser,
+  } = useContext(context);
   return (
     <main>
       <div className="container-login">
@@ -31,6 +34,7 @@ const Login = () => {
           <button
             className="btn-login"
             type="button"
+            onClick={handleLoginUser}
           >
             Entrar
           </button>
