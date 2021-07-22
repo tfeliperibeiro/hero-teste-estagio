@@ -1,19 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import firebase from '../data/firebaseConnection';
 import Context from './context';
 
 const MyProvider = ({ children }) => {
-  // Estado que armazena o valor do input de Login
+  // Estado que recebe o valor do input de Login de usuario
   const [userLogin, setUserLogin] = useState({
-    name: '',
     email: '',
+    password: '',
   });
-  // Estado que armazena dados da API de recomendados
+
+  // Estado que recebe input de registro de usuario
+  const [userRegister, setUserRegister] = useState({
+    email: '',
+    password: '',
+  });
+
+  /* Estado que recebe se o usuario
+  foi cadastrado para redirecionar para outra pagina */
+  const [isRegistered, setIsRegistered] = useState(false);
+
+  // Estado que recebe dados da API de recomendados
   const [dataApi, setDataApi] = useState([]);
   // Estado para armazenar os dados do Heroi cadastrados no Firebase
   const [heroFirebase, setHeroFirebase] = useState([]);
-  // Estado que armazena os valores dos inputs de cadastrar Heroi
+  // Estado que recebe os valores dos inputs de cadastrar Heroi
   const [heroRegister, setHeroRegister] = useState({
     name: '',
     description: '',
@@ -30,7 +42,10 @@ const MyProvider = ({ children }) => {
   // Estado para saber se ouve alguma edição, se houver faz uma nova requisição
   const [isEdited, setIsEdited] = useState(false);
 
-  // Estado que armazena os dados digitados no modal em editar Heroi
+  // Estado que recebe se o usuario foi logado para redirecionar ele para Home
+  // const [isLogged, setIsLogged] = useState(false);
+
+  // Estado que recebe os dados digitados no modal em editar Heroi
   const [editHero, setEditHero] = useState({
     name: '',
     description: '',
@@ -46,8 +61,8 @@ const MyProvider = ({ children }) => {
   };
 
   // Função que envia os dados de Login ao Firebase
-  const handleSetUserFirebase = async () => {
-    await firebase.firestore().collection('users')
+  const handleSetUserFirebase = () => {
+    firebase.firestore().collection('users')
       .add({
         name: userLogin.name,
         email: userLogin.email,
@@ -57,16 +72,16 @@ const MyProvider = ({ children }) => {
   };
 
   // Função que envia os dados do Heroi cadastrado ao Firebase
-  const handleSetHeroFirebase = async () => {
-    await firebase.firestore().collection('heroes')
+  const handleSetHeroFirebase = () => {
+    firebase.firestore().collection('heroes')
       .add(heroRegister)
       .then((result) => result)
       .catch((error) => error);
   };
 
   // Função que busca os Herois cadastrados no Firebase
-  const handleGetHeroFirebase = async () => {
-    await firebase.firestore().collection('heroes')
+  const handleGetHeroFirebase = () => {
+    firebase.firestore().collection('heroes')
       .get()
       .then((snapshot) => {
         // eslint-disable-next-line prefer-const
@@ -86,8 +101,8 @@ const MyProvider = ({ children }) => {
   };
 
   // Função que delete os dados do Heroi cadastrado ao Firebase
-  const handleDeleteHeroFirebase = async (id) => {
-    await firebase.firestore().collection('heroes')
+  const handleDeleteHeroFirebase = (id) => {
+    firebase.firestore().collection('heroes')
       .doc(id)
       .delete()
       .then(() => {
@@ -97,8 +112,9 @@ const MyProvider = ({ children }) => {
       .catch((error) => error);
   };
 
-  const handleEditHeroFirebase = async (id) => {
-    await firebase.firestore().collection('heroes')
+  // Função para editar Heroi no banco de dados
+  const handleEditHeroFirebase = (id) => {
+    firebase.firestore().collection('heroes')
       .doc(id)
       .update({
         name: editHero.name,
@@ -113,14 +129,58 @@ const MyProvider = ({ children }) => {
       .catch((error) => error);
   };
 
+  // Função que cadastra um novo usuario ao firebase
+  const handleRegisterNewUser = () => {
+    firebase.auth()
+      .createUserWithEmailAndPassword(userRegister.email, userRegister.password)
+      .then(() => {
+        toast.success('Usuario cadastrado!');
+        setIsRegistered(true);
+        setIsRegistered(false);
+      })
+      // fazendo tratamento de erros
+      .catch((error) => {
+        if (error.code === 'auth/weak-password') {
+          toast.error('Senha menor que 6 caracteres!');
+        } else if (error.code === 'auth/invalid-email') {
+          toast.error('Digite um email válido!');
+        } else if (error.code === 'auth/email-already-in-use') {
+          toast.error('Email já em uso!');
+        }
+      });
+  };
+
+  // Função que loga usuario na pagina
+  const handleLoginUser = () => {
+    firebase.auth()
+      .signInWithEmailAndPassword(userLogin.email, userLogin.password)
+      .then(() => {
+        toast.success('Login feito com sucesso!');
+        // setIsLogged(true);
+      })
+      .catch((error) => {
+        if (error.code === 'auth/user-not-found') {
+          toast.error('Usuário inválido!');
+        } else if (error.code === 'auth/wrong-password') {
+          toast.error('Senha incorreta!');
+        } else if (error.code === 'auth/invalid-email') {
+          toast.error('Email incorreto!');
+        }
+      });
+  };
+
   // Ciclo de vida, que chama as funções uma vez para trazer os dados
   useEffect(() => {
     fetchData();
   }, []);
 
   // Função que pega os dados do input do usuario
-  const handleInput = ({ target }) => {
+  const handleInputLoginUser = ({ target }) => {
     setUserLogin((oldState) => ({ ...oldState, [target.name]: target.value }));
+  };
+
+  const handleInputRegisterUser = ({ target }) => {
+    setUserRegister((oldState) => ({ ...oldState, [target.name]: target.value }));
   };
 
   // Função que pega os dados dos Herois na pagina de registro
@@ -141,7 +201,9 @@ const MyProvider = ({ children }) => {
   // Estado que é repassado a todos os componentes filhos
   const INITIAL_STATE = {
     userLogin,
-    handleInput,
+    userRegister,
+    handleInputLoginUser,
+    handleInputRegisterUser,
     dataApi,
     fetchData,
     handleInputRegister,
@@ -157,6 +219,10 @@ const MyProvider = ({ children }) => {
     editHero,
     handleEditHeroFirebase,
     isEdited,
+    handleRegisterNewUser,
+    isRegistered,
+    handleLoginUser,
+    // isLogged,
   };
 
   return (
