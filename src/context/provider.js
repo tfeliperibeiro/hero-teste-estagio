@@ -43,7 +43,7 @@ const MyProvider = ({ children }) => {
   const [isEdited, setIsEdited] = useState(false);
 
   // Estado que recebe se o usuario foi logado para redirecionar ele para Home
-  // const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(false);
 
   // Estado que recebe os dados digitados no modal em editar Heroi
   const [editHero, setEditHero] = useState({
@@ -107,7 +107,6 @@ const MyProvider = ({ children }) => {
       .delete()
       .then(() => {
         setRedirectHome(true);
-        setRedirectHome(false);
       })
       .catch((error) => error);
   };
@@ -156,7 +155,7 @@ const MyProvider = ({ children }) => {
       .signInWithEmailAndPassword(userLogin.email, userLogin.password)
       .then(() => {
         toast.success('Login feito com sucesso!');
-        // setIsLogged(true);
+        setIsLogged(true);
       })
       .catch((error) => {
         if (error.code === 'auth/user-not-found') {
@@ -222,7 +221,8 @@ const MyProvider = ({ children }) => {
     handleRegisterNewUser,
     isRegistered,
     handleLoginUser,
-    // isLogged,
+    isLogged,
+    heroRegister,
   };
 
   return (
