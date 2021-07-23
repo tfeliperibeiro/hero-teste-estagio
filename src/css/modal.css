@@ -34,3 +34,11 @@
   margin: 0 auto;
 }
 
+@media (max-width: 640px) and (min-width: 360px) {
+  .modal {
+    width: 100%;
+    height: 100vh;
+    background-color: #060126;
+    margin: 0 auto;
+  }
+}
