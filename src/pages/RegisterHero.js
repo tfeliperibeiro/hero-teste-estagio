@@ -23,6 +23,7 @@ const RegisterHero = () => {
                 id="name"
                 type="text"
                 onChange={handleInputRegister}
+                autoComplete="off"
               />
             </label>
           </div>
@@ -34,6 +35,7 @@ const RegisterHero = () => {
                 id="description"
                 type="text"
                 onChange={handleInputRegister}
+                autoComplete="off"
               />
             </label>
           </div>
@@ -45,6 +47,7 @@ const RegisterHero = () => {
                 id="powers"
                 type="text"
                 onChange={handleInputRegister}
+                autoComplete="off"
               />
             </label>
           </div>
@@ -56,6 +59,7 @@ const RegisterHero = () => {
                 type="text"
                 id="patch"
                 onChange={handleInputRegister}
+                autoComplete="off"
               />
             </label>
           </div>

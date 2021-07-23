@@ -34,6 +34,7 @@ const Modal = ({ id }) => {
                   id="name"
                   type="text"
                   onChange={handleEditHero}
+                  autoComplete="off"
                 />
               </label>
             </div>
@@ -45,6 +46,7 @@ const Modal = ({ id }) => {
                   id="description"
                   type="text"
                   onChange={handleEditHero}
+                  autoComplete="off"
                 />
               </label>
             </div>
@@ -56,6 +58,7 @@ const Modal = ({ id }) => {
                   id="powers"
                   type="text"
                   onChange={handleEditHero}
+                  autoComplete="off"
                 />
               </label>
             </div>
@@ -67,6 +70,7 @@ const Modal = ({ id }) => {
                   type="text"
                   id="patch"
                   onChange={handleEditHero}
+                  autoComplete="off"
                 />
               </label>
             </div>

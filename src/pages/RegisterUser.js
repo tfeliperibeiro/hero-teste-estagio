@@ -24,6 +24,7 @@ const RegisterUser = () => {
             type="email"
             name="email"
             onChange={handleInputRegisterUser}
+            autoComplete="off"
           />
           <input
             placeholder="Senha"
@@ -31,11 +32,13 @@ const RegisterUser = () => {
             type="password"
             name="password"
             onChange={handleInputRegisterUser}
+            autoComplete="off"
           />
           <button
             type="button"
             className="btn-login"
             onClick={handleRegisterNewUser}
+            autoComplete="off"
           >
             Cadastrar
           </button>
