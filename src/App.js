@@ -9,7 +9,6 @@ import DetailsRecommended from './pages/DetailsRecommended';
 import DetailsRegistered from './pages/DetailsRegistered';
 import RegisterUser from './pages/RegisterUser';
 import 'react-toastify/dist/ReactToastify.css';
-
 import './app.css';
 
 function App() {
