@@ -48,3 +48,14 @@
   border: 2px solid var(--color-text-hero);
   width: 500px;
 }
+
+@media (max-width: 640px) and (min-width: 360px) {
+  .container-card {
+    height: 100vh;
+    width: 80%;
+  }
+  .img-hero {
+    width: 300px;
+  }
+  
+}
