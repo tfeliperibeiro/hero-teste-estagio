@@ -1,12 +1,18 @@
 import React, { useContext } from 'react';
+import { Redirect } from 'react-router-dom';
 import Context from '../context/context';
 
 import '../css/registerHero.css';
 
 const RegisterHero = () => {
-  const { handleInputRegister, handleSetHeroFirebase } = useContext(Context);
+  const {
+    handleInputRegister,
+    handleSetHeroFirebase,
+    redirectHome,
+  } = useContext(Context);
   return (
     <div>
+      {redirectHome && <Redirect to="/home" />}
       <section className="container-register">
         <form className="container-input">
           <div className="input-register">
