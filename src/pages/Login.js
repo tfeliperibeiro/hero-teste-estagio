@@ -27,6 +27,7 @@ const Login = () => {
               className="input-login"
               type="text"
               name="email"
+              autoComplete="off"
             />
             <input
               onChange={handleInputLoginUser}
@@ -34,6 +35,7 @@ const Login = () => {
               className="input-login"
               type="password"
               name="password"
+              autoComplete="off"
             />
           </div>
           <div className="btn-link">
