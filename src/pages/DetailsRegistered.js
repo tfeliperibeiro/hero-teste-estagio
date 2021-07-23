@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import Context from '../context/context';
-import Header from '../components/Header';
 
 import '../css/detailsRegistered.css';
 import Modal from '../components/Modal';
@@ -24,7 +23,6 @@ const DetailsRegistered = ({ match: { params: { id } } }) => {
 
   return (
     <div>
-      <Header />
       {openModal && <Modal id={id} />}
       <div className="container-card">
         {redirectHome && <Redirect to="/home" />}
