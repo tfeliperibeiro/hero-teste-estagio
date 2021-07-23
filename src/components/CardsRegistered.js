@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { GiBatMask } from 'react-icons/gi';
 import Context from '../context/context';
 
 import '../css/cardStyle.css';
@@ -14,6 +15,16 @@ const CardsRegistered = () => {
   return (
     <div className="movieRow">
       <h2 className="text-recommended">Heróis cadastrados</h2>
+      <div className="container-msg-error">
+        {!heroFirebase.length && (
+        <p
+          className="text-recommended"
+        >
+          Sem Heróis cadastrados, cadastre seu primeiro Herói.
+          <GiBatMask className="icon-error" size={32} color="f2f2f2" />
+        </p>
+        )}
+      </div>
       <div className="movieRow--listarea">
         {heroFirebase && heroFirebase.map((hero) => (
           <div className="movieRow--list" key={hero.id}>
