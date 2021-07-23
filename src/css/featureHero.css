@@ -97,27 +97,12 @@
     .text-register {
         color: var(--color-text);
         font-size: 25px;
-        width: 100%;
-        text-align: center;
-        margin: 0px 0px 10px 0px;
+        margin-top: -50px;
     }
 
     .btn-register {
         width: 80%;
         height: 60px;
-        background-color: var(--color-text-hero);
-        border-radius: 100px;
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        font-size: 16px;
-        color: var(--color-text);
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        margin: 0 auto;
     }
     .btn-mobile {
         border: none;
@@ -131,7 +116,6 @@
     .container-user {
         justify-content: space-between;
     }
-
     .menu {
         position: fixed;
         top: 0;
