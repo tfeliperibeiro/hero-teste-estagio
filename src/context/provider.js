@@ -48,6 +48,9 @@ const MyProvider = ({ children }) => {
   // Estado que recebe se o usuario foi logado para redirecionar ele para Home
   const [isLogged, setIsLogged] = useState(false);
 
+  // Estado que recebe o valor do input de filtro
+  const [powerFiltered, setPowerFiltered] = useState('');
+
   // Estado que recebe os dados digitados no modal em editar Heroi
   const [editHero, setEditHero] = useState({
     name: '',
@@ -189,6 +192,10 @@ const MyProvider = ({ children }) => {
     setUserRegister((oldState) => ({ ...oldState, [target.name]: target.value }));
   };
 
+  const handleFilterPowers = ({ target }) => {
+    setPowerFiltered(target.value);
+  };
+
   // Função que pega os dados dos Herois na pagina de registro
   const handleInputRegister = ({ target }) => (
     setHeroRegister((oldState) => ({ ...oldState, [target.id]: target.value }))
@@ -236,6 +243,8 @@ const MyProvider = ({ children }) => {
     heroRegister,
     handleOpenMenu,
     openMenu,
+    handleFilterPowers,
+    powerFiltered,
   };
 
   return (
