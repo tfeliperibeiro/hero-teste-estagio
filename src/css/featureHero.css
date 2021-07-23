@@ -15,14 +15,6 @@
     width: 500px;
 }
 
-.feature-vertical {
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(to bottom, #111, transparent);
-    position: absolute;
-    z-index: 0;
-}
-
 .text-register {
     color: var(--color-text);
     font-size: 32px;
@@ -49,22 +41,57 @@
     margin-top: 30px;
 }
 
+.container-user {
+    background: linear-gradient(to bottom, #111, transparent);
+    display: flex;
+    color: var(--color-text);
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}
 
+.btn-mobile {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .btn-close {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.icon-close {
+    margin-left: 50px;
+    margin-top: 30px;
+}
+  
 /* RESPONSIVIDADE */
 
 @media (max-width: 801px) and (min-width: 320px) {
-    .container-feature {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-        overflow: hidden;
-    }
-
     .container-feature img {
-        width: 400px;
+        width: 100%;
+    }
+    .container-feature {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: space-evenly;
     }
 
     .text-register {
@@ -72,6 +99,7 @@
         font-size: 25px;
         width: 100%;
         text-align: center;
+        margin: 0px 0px 10px 0px;
     }
 
     .btn-register {
@@ -90,5 +118,42 @@
         align-items: center;
         text-decoration: none;
         margin: 0 auto;
+    }
+    .btn-mobile {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+    .container-user img {
+        width: 150px;
+    }
+    .container-user {
+        justify-content: space-between;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        width: 100%;
+        height: 112vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: ease 1s;
+      }
+      .btn-close {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    
+    .icon-close {
+        margin-left: 15px;
+        margin-top: 30px;
     }
 }
