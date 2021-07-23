@@ -67,6 +67,16 @@
   color: var(--color-text-hero);
 }
 
+.container-msg-error {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.icon-error {
+  margin-left: 10px;
+}
+
 /* MOBILE */
 
 
