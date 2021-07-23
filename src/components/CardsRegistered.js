@@ -50,6 +50,7 @@ const CardsRegistered = () => {
                   alt={`Imagem de ${hero.name}`}
                 />
                 <p className="name-hero">{hero.name}</p>
+                <p className="name-hero">{`Poder: ${hero.powers}`}</p>
                 <Link
                   to={`/home/${hero.id}/detalhes/cadastrados`}
                   className="link-details"
