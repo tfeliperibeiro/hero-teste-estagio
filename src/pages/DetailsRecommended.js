@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Context from '../context/context';
-import Header from '../components/Header';
 
 import '../css/detailsRecommended.css';
 
@@ -10,7 +9,6 @@ const DetailsRecommended = ({ match: { params: { id } } }) => {
 
   return (
     <div>
-      <Header />
       <div className="container-card">
         {dataApi && dataApi.filter((hero) => hero.id === Number(id))
           .map((hero) => (

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import Context from '../context/context';
-import Header from '../components/Header';
 
 import '../css/registerHero.css';
 
@@ -8,7 +7,6 @@ const RegisterHero = () => {
   const { handleInputRegister, handleSetHeroFirebase } = useContext(Context);
   return (
     <div>
-      <Header />
       <section className="container-register">
         <form className="container-input">
           <div className="input-register">
