@@ -113,17 +113,16 @@
         text-align: center;
     }
     .avatar {
-        width: 250px;
+        width: 300px;
     }
     .btn-login {
         width: 80%;
         height: 60px;
         font-size: 25px;
-        margin: 15px auto;
+        margin: 30px auto;
     }
     .link-register {
-        margin-top: 20px;
-        margin: 5px auto;
+        margin-top: -15px;
     }
     .text-mobile {
         display: flex;
