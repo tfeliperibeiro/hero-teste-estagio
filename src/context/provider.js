@@ -78,7 +78,10 @@ const MyProvider = ({ children }) => {
   const handleSetHeroFirebase = () => {
     firebase.firestore().collection('heroes')
       .add(heroRegister)
-      .then((result) => result)
+      .then(() => {
+        setRedirectHome(true);
+        setRedirectHome(false);
+      })
       .catch((error) => error);
   };
 
@@ -110,6 +113,7 @@ const MyProvider = ({ children }) => {
       .delete()
       .then(() => {
         setRedirectHome(true);
+        setRedirectHome(false);
       })
       .catch((error) => error);
   };
