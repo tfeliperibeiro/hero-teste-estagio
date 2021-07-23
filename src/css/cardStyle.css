@@ -65,3 +65,7 @@
 .container-card img {
   max-width: 500px;
 }
+
+.movieRow-registered {
+  margin-bottom: 30px;
+}
