@@ -66,3 +66,21 @@
 .link-get-url:hover {
   color: var(--color-text-hero);
 }
+
+/* MOBILE */
+
+
+@media (max-width: 640px) and (min-width: 360px) {
+  .container-register {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    color: var(--color-text);
+    width: 80%;
+  }
+  .container-input {
+    width: 100%;
+  }
+}
