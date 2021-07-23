@@ -1,29 +1,25 @@
 import React, { useContext } from 'react';
-import { BsBoxArrowInLeft } from 'react-icons/bs';
+import { AiOutlineMenu } from 'react-icons/ai';
 import Context from '../context/context';
 
 import logo from '../images/logo.svg';
-import icon from '../images/user.svg';
 
 const Header = () => {
-  const {
-    userLogged,
-  } = useContext(Context);
+  const { handleOpenMenu } = useContext(Context);
   return (
-    <header className="container-user">
-      <img className="logo-icon" src={logo} alt="Logotipo" />
-      <div className="container-icon-user">
-        <p>{userLogged}</p>
-        <img className="icon-user" src={icon} alt="Icone do usuario" />
+    <div>
+      <header className="container-user">
+        <img className="logo-icon" src={logo} alt="Logotipo" />
         <button
-          className="btn-logout"
+          className="btn-mobile"
           type="button"
+          onClick={handleOpenMenu}
         >
-          <BsBoxArrowInLeft size={26} color="#f2f2f2" />
-          Sair
+          <AiOutlineMenu size={30} color="#f2f2f2" />
         </button>
-      </div>
-    </header>
+      </header>
+      <div className="modal-menu" />
+    </div>
   );
 };
 

@@ -8,7 +8,6 @@ import '../css/featureHero.css';
 const FeatureHero = () => (
   <section>
     <Header />
-    <div className="feature-vertical" />
     <div className="container-feature">
       <img src={feature} alt="Imagem do Thor" />
       <div className="feature-register">

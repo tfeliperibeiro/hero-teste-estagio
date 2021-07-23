@@ -21,6 +21,9 @@ const MyProvider = ({ children }) => {
   foi cadastrado para redirecionar para outra pagina */
   const [isRegistered, setIsRegistered] = useState(false);
 
+  // Estado que seta quando o usuario clica no botao
+  const [openMenu, setOpenMenu] = useState(false);
+
   // Estado que recebe dados da API de recomendados
   const [dataApi, setDataApi] = useState([]);
   // Estado para armazenar os dados do Heroi cadastrados no Firebase
@@ -197,6 +200,10 @@ const MyProvider = ({ children }) => {
     setOpenModal(!openModal);
   };
 
+  const handleOpenMenu = () => {
+    setOpenMenu(!openMenu);
+  };
+
   // Estado que é repassado a todos os componentes filhos
   const INITIAL_STATE = {
     userLogin,
@@ -223,6 +230,8 @@ const MyProvider = ({ children }) => {
     handleLoginUser,
     isLogged,
     heroRegister,
+    handleOpenMenu,
+    openMenu,
   };
 
   return (

@@ -14,15 +14,6 @@
     width: 500px;
 }
 
-.container-user {
-    background: linear-gradient(to top, #111, transparent);
-    display: flex;
-    color: var(--color-text);
-    justify-content: space-around;
-    align-items: center;
-    height: 100px;
-}
-
 .btn-logout {
     cursor: pointer;
     background-color: transparent;
@@ -36,18 +27,8 @@
     align-items: center;
 }
 
-.icon-user {
-    width: 100px;
-}
-
 .logo-icon {
     width: 180px;
-}
-
-.container-icon-user {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .text-main {
@@ -116,10 +97,9 @@
     opacity: 0.5;
 }
 
-
 /* RESPONSIVIDADE */
 
-@media (max-width: 801px) and (min-width: 320px) {
+@media (max-width: 640px) and (min-width: 360px) {
     .container-login {
         flex-direction: column-reverse;
         overflow: hidden;
@@ -160,9 +140,6 @@
 
     .input-login input {
         margin-bottom: 10px;
-    }
-    .container-user{
-      display: none;
     }
 }
 
