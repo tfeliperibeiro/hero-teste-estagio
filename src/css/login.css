@@ -97,6 +97,7 @@
     opacity: 0.5;
 }
 
+
 /* RESPONSIVIDADE */
 
 @media (max-width: 640px) and (min-width: 360px) {
@@ -130,13 +131,10 @@
         line-height: 50px;
     }
     .input-login {
-      width: 80%;
-      margin: auto;
+        width: 80%;
+        margin: auto;
     }
-
     .input-login input {
         margin-bottom: 10px;
     }
 }
-
-
