@@ -168,7 +168,6 @@ const MyProvider = ({ children }) => {
       .signInWithEmailAndPassword(userLogin.email, userLogin.password)
       .then(() => {
         toast.success('Login feito com sucesso!');
-        setIsLogged(true);
       })
       .catch((error) => {
         if (error.code === 'auth/user-not-found') {
@@ -186,12 +185,13 @@ const MyProvider = ({ children }) => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         setUserData(user.email);
+        setIsLogged(true);
       } else {
         setIsLogged(false);
         setUserData('');
       }
     });
-  }, []);
+  }, [isLogged]);
 
   // Função que desloga uruario
   const handleLogout = () => {
