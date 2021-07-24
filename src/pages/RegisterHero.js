@@ -10,11 +10,12 @@ const RegisterHero = () => {
     handleSetHeroFirebase,
     redirectHome,
   } = useContext(Context);
+
   return (
     <div>
       {redirectHome && <Redirect to="/home" />}
       <section className="container-register">
-        <form className="container-input">
+        <form onSubmit={handleSetHeroFirebase} className="container-input">
           <div className="input-register">
             <label className="label" htmlFor="name">
               Digite o nome do Herói:
@@ -24,6 +25,7 @@ const RegisterHero = () => {
                 type="text"
                 onChange={handleInputRegister}
                 autoComplete="off"
+                required
               />
             </label>
           </div>
@@ -36,6 +38,7 @@ const RegisterHero = () => {
                 type="text"
                 onChange={handleInputRegister}
                 autoComplete="off"
+                required
               />
             </label>
           </div>
@@ -48,6 +51,7 @@ const RegisterHero = () => {
                 type="text"
                 onChange={handleInputRegister}
                 autoComplete="off"
+                required
               />
             </label>
           </div>
@@ -60,9 +64,16 @@ const RegisterHero = () => {
                 id="patch"
                 onChange={handleInputRegister}
                 autoComplete="off"
+                required
               />
             </label>
           </div>
+          <button
+            className="btn-register-hero"
+            type="submit"
+          >
+            Cadastrar
+          </button>
         </form>
         <a
           href="https://youtu.be/eQhM9emd6iA"
@@ -72,13 +83,6 @@ const RegisterHero = () => {
         >
           Veja como pegar o endereço da imagem.
         </a>
-        <button
-          className="btn-register-hero"
-          onClick={handleSetHeroFirebase}
-          type="button"
-        >
-          Cadastrar
-        </button>
       </section>
     </div>
   );
