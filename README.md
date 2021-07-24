@@ -2,7 +2,7 @@
 
 ## 💻 Sobre o projeto
 
-Hero cards foi desenvolvido a partir de um teste para estágio, onde o objetivo era cadastrar, editar, filtrar e excluir seus Heróis.
+Hero cards foi desenvolvido a partir de um teste para estágio, onde o objetivo foi cadastrar, editar, filtrar e excluir seus Heróis.
 
 Os usuários terão acesso Desktop e Mobile, onde poderão:
 - Cadastrar seus Heróis favoritos.
