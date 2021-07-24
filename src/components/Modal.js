@@ -5,6 +5,7 @@ import Context from '../context/context';
 
 import '../css/modal.css';
 
+// Componente que renderiza o modal na pagina de detalhes
 const Modal = ({ id }) => {
   const {
     handleOpenModal,

@@ -97,9 +97,6 @@
     opacity: 0.5;
 }
 
-
-/* RESPONSIVIDADE */
-
 @media (max-width: 640px) and (min-width: 360px) {
     .container-login {
         flex-direction: column-reverse;

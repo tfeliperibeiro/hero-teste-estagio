@@ -4,6 +4,7 @@ import Context from '../context/context';
 
 import '../css/cardStyle.css';
 
+// Componente que redereiza cards recomendados da API
 const CardsRecommended = () => {
   const { dataApi } = useContext(Context);
 

@@ -6,6 +6,7 @@ import FeatureHero from '../components/FeatureHero';
 import Menu from '../components/Menu';
 import Context from '../context/context';
 
+// Pagina home principal que renderiza os componentens
 const Home = () => {
   const { openMenu, isLogged } = useContext(Context);
   return (

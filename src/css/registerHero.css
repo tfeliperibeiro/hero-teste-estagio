@@ -77,9 +77,6 @@
     margin-left: 10px;
 }
 
-
-/* MOBILE */
-
 @media (max-width: 640px) and (min-width: 360px) {
     .container-register {
         height: 100vh;

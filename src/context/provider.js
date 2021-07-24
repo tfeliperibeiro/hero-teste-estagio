@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
-import firebase from '../data/firebaseConnection';
+import firebase from '../services/firebaseConnection';
 import Context from './context';
 
 const MyProvider = ({ children }) => {
@@ -196,6 +196,7 @@ const MyProvider = ({ children }) => {
   // Função que desloga uruario
   const handleLogout = () => {
     firebase.auth().signOut();
+    setOpenMenu(false);
   };
 
   // Ciclo de vida, que chama as funções uma vez para trazer os dados

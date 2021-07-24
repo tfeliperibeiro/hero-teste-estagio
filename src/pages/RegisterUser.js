@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import Context from '../context/context';
 import '../css/login.css';
 
+// Pagina de cadastro de um novo usuario com email e senha
 const RegisterUser = () => {
   const {
     handleInputRegisterUser,

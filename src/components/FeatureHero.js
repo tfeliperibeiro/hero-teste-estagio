@@ -5,6 +5,7 @@ import Header from './Header';
 
 import '../css/featureHero.css';
 
+// componente que renderiza a imagem do personagem na pagina home
 const FeatureHero = () => (
   <section>
     <Header />
