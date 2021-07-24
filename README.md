@@ -10,6 +10,8 @@ Os usuários terão acesso Desktop e Mobile, onde poderão:
 - filtrar Herói por poderes.
 - Deletar este Herói.
 
+[Link para aplicação](https://herocards.netlify.app/home)
+
 
 ## 🎨 Layout
 
