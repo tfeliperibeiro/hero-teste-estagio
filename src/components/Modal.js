@@ -16,7 +16,13 @@ const Modal = ({ id }) => {
     <div className="container-modal">
       <div className="modal">
         <section className="container-register">
-          <form className="container-input">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleEditHeroFirebase(id);
+            }}
+            className="container-input"
+          >
             <div className="container-btn-modal">
               <button
                 className="icon-close"
@@ -35,6 +41,7 @@ const Modal = ({ id }) => {
                   type="text"
                   onChange={handleEditHero}
                   autoComplete="off"
+                  required
                 />
               </label>
             </div>
@@ -47,6 +54,7 @@ const Modal = ({ id }) => {
                   type="text"
                   onChange={handleEditHero}
                   autoComplete="off"
+                  required
                 />
               </label>
             </div>
@@ -59,6 +67,7 @@ const Modal = ({ id }) => {
                   type="text"
                   onChange={handleEditHero}
                   autoComplete="off"
+                  required
                 />
               </label>
             </div>
@@ -71,17 +80,17 @@ const Modal = ({ id }) => {
                   id="patch"
                   onChange={handleEditHero}
                   autoComplete="off"
+                  required
                 />
               </label>
             </div>
+            <button
+              className="btn-register-hero"
+              type="submit"
+            >
+              Salvar
+            </button>
           </form>
-          <button
-            className="btn-register-hero"
-            type="submit"
-            onClick={() => (handleEditHeroFirebase(id))}
-          >
-            Salvar
-          </button>
         </section>
       </div>
     </div>

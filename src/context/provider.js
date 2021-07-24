@@ -78,7 +78,8 @@ const MyProvider = ({ children }) => {
   };
 
   // Função que envia os dados do Heroi cadastrado ao Firebase
-  const handleSetHeroFirebase = () => {
+  const handleSetHeroFirebase = (e) => {
+    e.preventDefault();
     firebase.firestore().collection('heroes')
       .add(heroRegister)
       .then(() => {
