@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+<img src="src/images/banner.png" alt="Banner do Projeto"/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 💻 Sobre o projeto
 
-## Available Scripts
+Hero cards foi desenvolvido para um teste para estágio, onde o obejetivo era cadastrar, editar, filtrar e excluir seus Heróis.
 
-In the project directory, you can run:
+Os usuários terão acesso Desktop e Mobile, onde poderão:
+- Cadastrar seus Heróis favoritos.
+- Editar as informações deste Herói.
+- filtrar Herói por poderes.
+- Deletar este Herói.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🎨 Layout
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Mobile
 
-### `npm test`
+<img src="src/images/mobile-login.png"/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Desktop
 
-### `npm run build`
+<img src="src/images/banner.png"/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🛠 Tecnologias
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+As seguintes ferramentas foram usadas na construção do projeto:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* React Js
+* Context API
+* React Router
+* Firebase para banco de dados
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🚀 Como executar o projeto
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Siga o passo a passo.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 🧭 Rodando a aplicação web (Front End)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+# Clone este repositório
+$ git clone https://github.com/tgmarinho/nlw1
 
-## Learn More
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd nlw1
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Vá para a pasta da aplicação Front End
+$ cd web
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Instale as dependências
+$ npm install
 
-### Code Splitting
+# Execute a aplicação em modo de desenvolvimento
+$ npm run start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# A aplicação será aberta na porta:3000 - acesse http://localhost:3000
+```
 
-### Analyzing the Bundle Size
+### 📱Rodando a aplicação mobile 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+🚧 Em construção... 🚧
 
-### Making a Progressive Web App
+## 😯 Como contribuir para o projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Faça um **fork** do projeto.
+2. Crie uma nova branch com as suas alterações: `git checkout -b my-feature`
+3. Salve as alterações e crie uma mensagem de commit contando o que você fez: `git commit -m "feature: My new feature"`
+4. Envie as suas alterações: `git push origin my-feature`
+> Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📝 Licença
 
-### Deployment
+Este projeto esta sobe a licença MIT.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Feito com ❤️ por Thiago Marinho 👋🏽 [Entre em contato!](https://www.linkedin.com/in/tgmarinho/)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[nodejs]: https://nodejs.org/
+[typescript]: https://www.typescriptlang.org/
+[expo]: https://expo.io/
+[reactjs]: https://reactjs.org
+[rn]: https://facebook.github.io/react-native/
+[yarn]: https://yarnpkg.com/
+[vscode]: https://code.visualstudio.com/
+[vceditconfig]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+[license]: https://opensource.org/licenses/MIT
+[vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+[prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+[rs]: https://rocketseat.com.br
