@@ -51,6 +51,9 @@ const MyProvider = ({ children }) => {
   // Estado que recebe o valor do input de filtro
   const [powerFiltered, setPowerFiltered] = useState('');
 
+  // Estado que recebe o email do usuario logado
+  const [userData, setUserData] = useState('');
+
   // Estado que recebe os dados digitados no modal em editar Heroi
   const [editHero, setEditHero] = useState({
     name: '',
@@ -94,8 +97,7 @@ const MyProvider = ({ children }) => {
     firebase.firestore().collection('heroes')
       .get()
       .then((snapshot) => {
-        // eslint-disable-next-line prefer-const
-        let listHero = [];
+        const listHero = [];
         snapshot.forEach((doc) => {
           listHero.push({
             id: doc.id,
@@ -179,6 +181,23 @@ const MyProvider = ({ children }) => {
       });
   };
 
+  // Função que fica monitorando usuario logado
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setUserData(user.email);
+      } else {
+        setIsLogged(false);
+        setUserData('');
+      }
+    });
+  }, []);
+
+  // Função que desloga uruario
+  const handleLogout = () => {
+    firebase.auth().signOut();
+  };
+
   // Ciclo de vida, que chama as funções uma vez para trazer os dados
   useEffect(() => {
     fetchData();
@@ -246,6 +265,8 @@ const MyProvider = ({ children }) => {
     openMenu,
     handleFilterPowers,
     powerFiltered,
+    handleLogout,
+    userData,
   };
 
   return (

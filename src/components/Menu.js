@@ -3,9 +3,12 @@ import { FiX } from 'react-icons/fi';
 import Context from '../context/context';
 
 const Menu = () => {
-  const { handleOpenMenu } = useContext(Context);
+  const {
+    handleOpenMenu, handleLogout, userData,
+  } = useContext(Context);
   return (
     <div className="menu">
+
       <div className="container-btn-close">
         <button
           onClick={handleOpenMenu}
@@ -19,6 +22,9 @@ const Menu = () => {
           />
         </button>
       </div>
+      {userData !== ''
+        ? <p className="text-recommended">{userData}</p> : null}
+      <button onClick={handleLogout} type="button">Sair</button>
     </div>
   );
 };
