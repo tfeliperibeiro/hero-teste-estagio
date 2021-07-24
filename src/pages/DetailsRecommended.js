@@ -4,6 +4,7 @@ import Context from '../context/context';
 
 import '../css/detailsRecommended.css';
 
+// Pagina de detalhes do card recomendado pela API
 const DetailsRecommended = ({ match: { params: { id } } }) => {
   const { dataApi } = useContext(Context);
 

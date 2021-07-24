@@ -5,6 +5,7 @@ import Context from '../context/context';
 
 import '../css/cardStyle.css';
 
+// Componente que renderiza os cards cadastrados pelo usuario
 const CardsRegistered = () => {
   const {
     heroFirebase,

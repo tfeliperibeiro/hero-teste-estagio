@@ -4,6 +4,7 @@ import Context from '../context/context';
 
 import logo from '../images/logo.svg';
 
+// Componente que renderiza o Header com o botao e logo
 const Header = () => {
   const { handleOpenMenu } = useContext(Context);
   return (

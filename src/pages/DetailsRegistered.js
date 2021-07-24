@@ -6,6 +6,7 @@ import Context from '../context/context';
 import '../css/detailsRegistered.css';
 import Modal from '../components/Modal';
 
+// Pagina de detalhes dos cards registrados pelo usuario
 const DetailsRegistered = ({ match: { params: { id } } }) => {
   const {
     heroFirebase,

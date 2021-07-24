@@ -4,6 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import avatar from '../images/avatar.png';
 import context from '../context/context';
 
+// Pagina de Login do usuario
 const Login = () => {
   const {
     handleInputLoginUser,

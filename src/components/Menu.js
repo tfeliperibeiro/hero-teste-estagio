@@ -3,6 +3,7 @@ import { FiX } from 'react-icons/fi';
 import { BsPeopleCircle } from 'react-icons/bs';
 import Context from '../context/context';
 
+// Componente que renderiza o menu modal
 const Menu = () => {
   const {
     handleOpenMenu, handleLogout, userData,

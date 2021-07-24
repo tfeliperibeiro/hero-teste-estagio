@@ -4,6 +4,7 @@ import Context from '../context/context';
 
 import '../css/registerHero.css';
 
+// Pagina onde o usuario pode Registrar os Herois
 const RegisterHero = () => {
   const {
     handleInputRegister,
