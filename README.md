@@ -28,6 +28,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 * React Js
 * Context API
 * React Router
+* API X-Men
 * Firebase para banco de dados
 
 
